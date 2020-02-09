@@ -1,8 +1,8 @@
 module.exports = {
   title: "红鼻子",
   description: "It turns out that each of us is a clown. In order to live, we have to shape ourselves in a way that others like",
-  base: '/', // 项目根路径
-  dest: '/dist/', // 打包后的文件夹路径，为了方便，我把 dist 文件夹放到了根目录上
+  base: '/vuepress-blog/', // 项目根路径
+  dest: './docs/.vuepress/dist/', // 打包后的文件夹路径，为了方便，我把 dist 文件夹放到了根目录上
   // head 标签中的额外内容
   head: [
     ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }]

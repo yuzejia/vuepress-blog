@@ -20,7 +20,7 @@ tags:
     git init 
     ```
 
-3. **创建 .gitignore 文件，该文件主要作用是设置忽略提交某些问题。如果本地项目包含了 node_module, node_module体积大，一般作为本地开发依赖使用不需要提交到远程仓库。这时候在 .gitignore 中编辑：**
+3. **创建 .gitignore 文件，该文件主要作用是设置忽略提交某些文件。如果本地项目包含了 node_module, node_module体积大，一般作为本地开发依赖使用不需要提交到远程仓库。这时候在 .gitignore 中编辑：**
 
     ```
     # dependencies
