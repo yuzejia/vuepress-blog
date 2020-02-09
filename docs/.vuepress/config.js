@@ -1,6 +1,6 @@
 module.exports = {
   title: "红鼻子",
-  description: "-----",
+  description: "It turns out that each of us is a clown. In order to live, we have to shape ourselves in a way that others like",
   base: '/', // 项目根路径
   dest: '/dist/', // 打包后的文件夹路径，为了方便，我把 dist 文件夹放到了根目录上
   // head 标签中的额外内容
@@ -22,7 +22,7 @@ module.exports = {
   themeConfig: {
     type: 'blog',
     author: 'YUZEJIA',  // 全局作者
-    authorAvatar: '/avatar.png',
+    authorAvatar: '/avatar.jpg',
     sidebar: 'auto',//在所有页面中启用自动生成侧栏
       // 博客配置
       blogConfig: {
@@ -32,7 +32,7 @@ module.exports = {
         },
         tag: {
           location: 3,     // 在导航栏菜单中所占的位置，默认3
-          text: 'Tag'      // 默认文案 “标签”
+          text: '标签'      // 默认文案 “标签”
         }
       }
   }
