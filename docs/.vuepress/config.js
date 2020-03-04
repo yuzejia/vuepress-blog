@@ -35,5 +35,6 @@ module.exports = {
           text: '标签'      // 默认文案 “标签”
         }
       }
-  }
+  },
+  plugins:["vuepress-plugin-comments"]
 }
