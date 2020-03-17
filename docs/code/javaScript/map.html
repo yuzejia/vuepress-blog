@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>map</title>
+</head>
+
+<body>
+  <p> map 创建新数组；不改变原始数组 </p>
+  <script>
+
+//     let a1 = [{'a':1},{'b':2}, {'c':3}, {'d':4}];
+//     let a3 = new Map([['a',1],['b',2], ['c',3]])
+//     // console.log('a3', a3)
+
+
+//     var twoSum = function(nums, target) {
+//       const map = new Map()
+//       for (let i = 0; i < nums.length; i ++) {
+//         const otherIndex = map.get(target - nums[i]);
+//         // console.log('otherIndex', otherIndex)
+//         if (otherIndex !== undefined) return [otherIndex, i]
+//         map.set(nums[i], i);
+//         // console.log(map)
+//       }
+//     };
+
+//    const f = twoSum([1,2,3,4,5], 5);
+//   //  console.log(f)
+
+
+
+//    var twoSum2 = function(nums, target) {
+//      const map = new Map();
+//      for (let i = 0; i < nums.length; i ++) {
+//     const index =  map.get(target - nums[i]);
+//     console.log('index----------', index)
+//     if(index !== undefined) {
+//       return [index, i]
+//     }
+//     map.set(nums[i],i);
+//     console.log(map)
+//     }
+// };
+
+//  let d = twoSum2([1,2,3,4], 5);
+//  console.log('---------------sddddddddddddddd', d)
+
+var compressString = function(S) {
+    let list = S[0];
+    let n = 0;
+   for (let index = 0; index < S.length; index++) {
+        if(list.charAt(list.length-1) != S[index]){
+          list += n + S[index];
+          n = 1;
+        }else {
+         n++;
+        }
+   }
+  list +=n;
+  return list.length < S.length ? list : S;
+
+}; 
+ let dd = compressString("abbccd")
+console.log(dd)
+
+
+var lengthOfLongestSubstring = function(s) {
+    let arr = [];
+    let max = 0;
+    for(let item of s){
+        if(arr.includes(item)){
+            let index = arr.indexOf(item);
+            arr.splice(0, index + 1);
+        }
+        arr.push(item);
+        console.log(arr)
+        max = max > arr.length ? max : arr.length;
+    }
+    return max;
+};
+
+lengthOfLongestSubstring('aaadfdfhyyjywret')
+  </script>
+</body>
+
+</html>
