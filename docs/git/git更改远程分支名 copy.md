@@ -33,7 +33,7 @@ git push origin new_branch
 5. **建立本地分支和远程分支联系**
 
 ```
-git branch --set-upstream-to origin/mew_branch
+git branch --set-upstream-to origin/new_branch
 ```
 
 **ok~**
