@@ -1,3 +1,6 @@
+
+const blogConfig = require('./configs/blog-config');
+
 module.exports = {
   title: "红鼻子",
   description: "It turns out that each of us is a clown. In order to live, we have to shape ourselves in a way that others like",
@@ -9,7 +12,7 @@ module.exports = {
   ],
   // 语言配置
   locales: {
-    // 键名是该语言所属的子路径
+    // 键名是该语言所属的子路径 
     // 作为特例，默认语言可以使用 '/' 作为其路径。
     '/': {
       lang: 'zh-CN', // 将会被设置为 <html> 的 lang 属性
@@ -25,16 +28,7 @@ module.exports = {
     authorAvatar: '/avatar.jpg',
     sidebar: 'auto',//在所有页面中启用自动生成侧栏
       // 博客配置
-      blogConfig: {
-        category: {
-          location: 1,     // 在导航栏菜单中所占的位置，默认2
-          text: '前端' // 默认文案 “分类”
-        },
-        tag: {
-          location: 3,     // 在导航栏菜单中所占的位置，默认3
-          text: '标签'      // 默认文案 “标签”
-        }
-      }
+      blogConfig: blogConfig
   },
   plugins:["vuepress-plugin-comments"]
 }
