@@ -24,5 +24,8 @@
     "vuepress-plugin-autobar": "github:boboidream/vuepress-bar",
     "vuepress-theme-reco": "^1.2.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "node-uuid": "^1.4.8",
+    "ws": "^7.5.1"
+  }
 }
