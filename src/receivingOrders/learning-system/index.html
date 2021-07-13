@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>班级管理系统</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <style>
+        .header {
+            height: 60px;
+            background-color: rgb(71, 70, 70);
+            color: #fff;
+        }
+
+        ul,
+        li {
+            padding: 0;
+            margin: 0;
+            list-style: none
+        }
+
+        .header .header-ul>li {
+            display: inline-block;
+            width: 120px;
+            cursor: pointer;
+            line-height: 60px;
+            text-align: center;
+            font-size: 14px;
+
+        }
+
+        .header .header-ul>li:hover {
+            color: rgb(0, 0, 0);
+            background: rgb(255, 255, 255);
+            font-weight: bold;
+        }
+
+        .header .header-ul .hover {
+            color: rgb(0, 0, 0);
+            background: rgb(255, 255, 255);
+            font-weight: bold;
+        }
+
+        .header .header-ul {
+            display: initial;
+            font-size: 0;
+        }
+
+        .content>.box {
+            display: none;
+            margin-left: 10%;
+        }
+
+
+
+        .table-th>th {
+
+            width: 160px;
+            height: 40px;
+            background: rgb(125 125 125);
+            color: #fff;
+            border-right: 1px solid #eee;
+        }
+
+        .table-td>td {
+            text-align: center;
+            height: 40px;
+            border: 1px solid #eee;
+        }
+
+        .fc-red {
+            color: red;
+        }
+
+        .cursor {
+            cursor: pointer;
+        }
+
+
+        .box3-content {
+            display: flex;
+        }
+
+
+        .name_list>span {
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <div>
+            <span style="margin:0 20px; font-size: 18px;">班级管理系统</span>
+            <ul class="header-ul">
+
+                <li>点名管理</li>
+                <li>作业管理</li>
+                <li>学生信息管理</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="box tebs-1">
+
+            <h2>点名管理</h2>
+            <div>
+                <div class="name_list">
+
+                </div>
+
+            </div>
+            <div style="margin-top: 20px;">
+                <button onclick="dianming(true)"> 开始</button>
+                <button onclick="dianming(false)"> 停止</button>
+            </div>
+
+            <div style="margin-top: 20px;">
+                选中姓名：<h1 id="nameTips" style="font-size: 26px;"></h1>
+            </div>
+
+        </div>
+        <div class="box tebs-2">
+
+            <h2>作业管理</h2>
+
+            <div>
+                <table id="myTable2" border="0" cellspacing="0" cellpadding="0">
+                    <tr class="table-th">
+                        <th>科目</th>
+                        <th>内容</th>
+                        <th>备注</th>
+                        <th>完成时间</th>
+                        <th>操作</th>
+                    </tr>
+            
+
+                </table>
+            </div>
+        </div>
+        <div class="box tebs-3">
+            <h2>学生信息管理</h2>
+
+            <div class="box3-content">
+                <div>
+                    <table id="myTable3" border="0" cellspacing="0" cellpadding="0">
+                        <tr class="table-th">
+                            <th>姓名</th>
+                            <th>年龄</th>
+                            <th>性别</th>
+                            <th>操作</th>
+                        </tr>
+                        <tr class="table-td">
+                            <td>Alfreds Futterkiste</td>
+                            <td>Germany</td>
+                            <td>Germany</td>
+                            <td><span class="cursor">详情</span> <span class="fc-red cursor">删除</span> </td>
+                        </tr>
+                        <tr class="table-td">
+                            <td>Alfreds Futterkiste</td>
+                            <td>Germany</td>
+                            <td>Germany</td>
+                            <td><span class="cursor">详情</span> <span class="fc-red cursor">删除</span> </td>
+                        </tr>
+                        <tr class="table-td">
+                            <td>Alfreds Futterkiste</td>
+                            <td>Germany</td>
+                            <td>Germany</td>
+                            <td><span class="cursor">详情</span> <span class="fc-red cursor">删除</span> </td>
+                        </tr>
+                        <tr class="table-td">
+                            <td>Alfreds Futterkiste</td>
+                            <td>Germany</td>
+                            <td>Germany</td>
+                            <td><span class="cursor">详情</span> <span class="fc-red cursor">删除</span> </td>
+                        </tr>
+
+                    </table>
+                </div>
+
+                <div>
+                    右侧详情
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script>
+
+        // 点名系统 --------------
+
+        const NAME_LIST = [
+            '张三', '小明', '大明', '李四', '王五', '思聪', '星腾',
+            '昊硕', '华清', '俊良', '力夫', '安康', '辰钊', '张三',
+            '小明', '大明', '李四', '王五', '思聪', '星腾', '昊硕',
+            '华清', '俊良', '力夫', '安康', '辰钊'];
+        const nameTips = document.getElementById('nameTips');
+        nameTips.innerText = NAME_LIST[0];
+        let intervalId;  // 定时器id
+
+
+        function init() {
+            const nameList = document.getElementsByClassName('name_list')[0];
+            console.log(nameList);
+            NAME_LIST.forEach(e => {
+                const spanEl = document.createElement('span');
+                spanEl.innerText = e;
+                console.log(spanEl);
+                nameList.appendChild(spanEl);
+            })
+
+        }
+
+        init();
+
+        function dianming(type) {
+
+            if (type) {
+                if (intervalId) {
+                    return;
+                }
+                intervalId = setInterval(() => {
+                    const num = Math.ceil(Math.random() * NAME_LIST.length - 1);
+                    const name = NAME_LIST[num];
+                    nameTips.innerText = name;
+                })
+
+            } else {
+                clearInterval(intervalId)
+                intervalId = null;
+            }
+
+        }
+
+
+
+
+        // 学生信息 -----
+
+
+        // 读取li 事件
+
+        const ul = document.getElementsByClassName('header-ul')[0].children;
+        const box = document.getElementsByClassName('box');
+
+        // 绑定点击事件
+        for (let index = 0; index < ul.length; index++) {
+            ul[index].onclick = (n) => {
+                boxf(index);
+            }
+
+        }
+
+        // 进行切换
+        function boxf(n) {
+            console.log(n);
+            ul[n].className = 'hover'; // tabs高亮
+
+            for (let index = 0; index < box.length; index++) {
+                const b = box[index];
+                ul[index].classList.remove("hover");
+
+                if (index === n) {
+                    box[index].style.display = 'block'
+
+                } else {
+                    box[index].style.display = 'none';
+                }
+            }
+
+            ul[n].classList.add("hover");
+
+        }
+
+    
+        // 作业发布系统-----
+        const myTable3List = [
+            {name: '数学', content: '函数', id: '按时完成', time :'2021-05-08 23:15:34', cz: ''},
+            {name: '数学', content: '函数', id: '按时完成', time :'2021-05-08 23:15:34', cz: ''}
+        ]
+        const myTable3 = document.getElementById('myTable2');
+
+        var deleteFun = (n) => {
+            console.log(n);
+        }
+
+        myTable3List.forEach((obj, index) => {
+
+            const tr = document.createElement('tr');
+            tr.className = 'table-td';
+            Object.keys(obj).forEach((key, n) => {
+                
+                const td = document.createElement('td');
+                td.innerText = obj[key];
+                
+                const f = document.createElement('button')
+                f.innerText = '发布';
+                const d = document.createElement('button');
+                d.onclick = () => {
+                    deleteFun(index);
+                }
+
+                d.className = 'fc-red'
+                d.innerText = '删除';
+                if(key === 'cz') {
+                    td.appendChild(f);
+                    td.appendChild(d);
+                    tr.append(td);
+                }
+            
+                tr.append(td);
+
+            })
+
+            myTable3.appendChild(tr);
+        })
+
+    
+    </script>
+
+</body>
+
+</html>
