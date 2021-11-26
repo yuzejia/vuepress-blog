@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,12,13,14];
+        // 截取 相邻8个字符
+        function listIndex(list = [], n, type = null) {
+            if (list && list.length > 0) {
+                const index = list.findIndex((item) => item === n);
+                let listNum = list.length - 1;
+                let _list
+                switch (type) {
+                    case 'left':
+                        _list = list.slice(index - 8 < 0 ? 0 : index - 8, index < 0 ? 0 : index)
+                        break;
+                    case 'right':
+                        _list = list.slice(index + 1, index + 8 + 1)
+                        break;
+
+                    default:
+                        if (listNum - index < 4) {
+                            _list = [...list.slice(index - (8 - (listNum - index)), index), ...list.slice(index + 1)]
+                        } else {
+                            _list = _list = [...list.slice(index - 4 < 0 ? 0 : index - 4, index), ...list.slice(index + 1, index <= 4 ? index + (8 - index) + 1 : (index + 4) + 1)]
+                        }
+
+                        break;
+                }
+
+
+                console.log(list);
+                console.log(_list);
+            }
+        }
+
+        listIndex(list, 7)
+    </script>
+</body>
+
+</html>

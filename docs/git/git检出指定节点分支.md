@@ -1,11 +1,11 @@
-<!-- ---
+---
 title: git从指定节点检出分支
 date: 2019-02-28
 categories: 
  - 前端
 tags:
  - git
---- -->
+---
 1. **获取需检出的节点commit id**
 
 ```
