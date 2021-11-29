@@ -35,6 +35,3 @@ Schedulers (调度器): 用来控制并发并且是中央集权的调度员，�
 对于 RxJS 5.0.0-beta.1 到 beta.11： https://unpkg.com/@reactivex/rxjs@version/dist/global/Rx.umd.js
 
 对于 RxJS 5.0.0-beta.12 及以上版本： https://unpkg.com/@reactivex/rxjs@version/dist/global/Rx.js
-
-
-12424

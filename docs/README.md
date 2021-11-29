@@ -1,7 +1,7 @@
 ---
 home: true
-bgImage: '/16013920_1353654565611.jpg'
+bgImage: ''
 bgImageStyle: {
-  height: '350px'
+  height: '0'
 }
 ---
