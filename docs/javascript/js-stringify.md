@@ -1,11 +1,11 @@
-<!-- ---
+---
 title: JSON.stringify()
 date: 2020-11-29
 categories: 
  - 前端
 tags:
  - javaScript
---- -->
+---
 
 JSON.stringify() 把 JavaScript 对象转换为字符串。工作中尝尝会用到该方法，但是好多都是只使用第一个参数，而忽略了其余的两个参数。了解其他参数，能帮你解决更多问题。
 
