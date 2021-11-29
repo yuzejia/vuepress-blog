@@ -16,7 +16,7 @@ JSON.stringify 接受三个参数：
 ### value
 将要序列化成 一个 JSON 字符串的值。
 第一个参数也就是要格式化的对象,这个大家基本常用的
-```
+```javaScript
 let obj = {a:1,b:2,c:3}
 JSON.stringify(obj)
 
@@ -29,8 +29,8 @@ JSON.stringify(obj)
 + 如果该参数是一个函数，则在序列化过程中，被序列化的值的每个属性都会经过该函数的转换和处理；
 该回调函数接受两个参数 key,value; 对应的就是格式化对象的 key，value 。我们可以通过一些逻辑判断来过滤被格式化的内容。
 
-```
-例子1：把key 为 c 的过滤掉
+```javaScript
+//例子1：把key 为 c 的过滤掉
 let obj = {a:1,b:2,c:3}
 JSON.stringify(obj, function(key, value) {
     if(key !== 'c') {
@@ -40,7 +40,7 @@ JSON.stringify(obj, function(key, value) {
 
 // 结果： '{"a":1,"b":2}'
 
-例子2： 通过判断条件还可以进行对应value的修改
+//例子2： 通过判断条件还可以进行对应value的修改
 let obj = {a:1,b:2,c:3}
 JSON.stringify(obj, function(key, value) {
     if(key == 'c') {
@@ -50,7 +50,7 @@ JSON.stringify(obj, function(key, value) {
 })
 
 // 结果：'{"a":1,"b":2,"c":"1111"}'
-修改了 obj 中 c 对应的内容
+//修改了 obj 中 c 对应的内容
 
 
 ```
@@ -74,7 +74,7 @@ JSON.stringify(obj, null)
 
 ### space 可选
 指定缩进用的空白字符串，用于美化输出（pretty-print）；如果参数是个数字，它代表有多少的空格；上限为10。该值若小于1，则意味着没有空格；如果该参数为字符串（当字符串长度超过10个字母，取其前10个字母），该字符串将被作为空格；如果该参数没有提供（或者为 null），将没有空格。
-```
+```javaScript
 let obj = {a:1,b:2,c:3}
 console.log(JSON.stringify({a:1,b:2,c:3}, ['a', 'c'], 2))
 
