@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>二叉树遍历</title>
+</head>
+
+<body>
+
+    <script>
+        /**
+           * Definition for a binary tree node.
+           * function TreeNode(val) {
+           *     this.val = val;
+           *     this.left = this.right = null;
+           * }
+           */
+        /**
+         * @param {TreeNode} root
+         * @return {number[]}
+         */
+
+        function TreeNode(val) {
+            this.val = val;
+            this.left = this.right = null;
+        }
+        const averageOfLevels = (root) => {
+            const res = [];
+            const queue = [];
+            queue.push(root);
+            console.log(queue.length, 'queue', queue[0]);
+            while (queue.length) {
+                const levelSize = queue.length;
+                let levelSum = 0;
+                for (let i = 0; i < levelSize; i++) {
+                    const cur = queue.shift();
+                    console.log('cur', cur);
+                    levelSum += cur.val;
+                    if (new TreeNode(cur).left) {
+                        queue.push(new TreeNode(cur).left);
+                    }
+                    if (new TreeNode(cur).right) {
+                        queue.push(new TreeNode(cur).right);
+                    }
+                }
+                console.log('11111', levelSum);
+                console.log('22222', levelSize);
+                res.push(levelSum / levelSize);
+                console.log('看看一下是什么', res);
+            }
+            console.log(res[0]);
+            return res;
+        };
+
+
+        console.log('结果', averageOfLevels([3, 9, 20, 15, 7]));
+
+        function TreeCode() {
+            let BiTree = function (ele) {
+                this.data = ele;
+                this.lChild = null;
+                this.rChild = null;
+            }
+
+            this.createTree = function () {
+                let biTree = new BiTree('A');
+                biTree.lChild = new BiTree('B');
+                biTree.rChild = new BiTree('C');
+                biTree.lChild.lChild = new BiTree('D');
+                biTree.lChild.lChild.lChild = new BiTree('G');
+                biTree.lChild.lChild.rChild = new BiTree('H');
+                biTree.rChild.lChild = new BiTree('E');
+                biTree.rChild.rChild = new BiTree('F');
+                biTree.rChild.lChild.rChild = new BiTree('I');
+                return biTree;
+            }
+        }
+
+        //前序遍历
+        function ProOrderTraverse(biTree) {
+            if (biTree == null) return;
+            console.log(biTree.data);
+            ProOrderTraverse(biTree.lChild);
+            ProOrderTraverse(biTree.rChild);
+        }
+
+        let myTree = new TreeCode();
+        console.log('二叉树遍历===', myTree.createTree());
+
+        console.log('前序遍历')
+        ProOrderTraverse(myTree.createTree());
+
+        // 二叉树创建 ===
+        const treeList = (root) => {
+
+        }
+    </script>
+</body>
+
+</html>
