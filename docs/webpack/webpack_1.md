@@ -17,7 +17,7 @@ tags:
 ```
 
 ## 初始化 package.json
-新建文件夹在文件夹下 webpack-y
+新建文件夹 webpack-y
 ```
 cd webpack-y
 npm init -y
