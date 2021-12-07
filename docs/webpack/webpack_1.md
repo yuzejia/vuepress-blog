@@ -6,8 +6,20 @@ categories:
 tags:
  - webpack
 ---
+## 打包环境
+
+```
+  node 14.15.0
+  npm  6.14.8
+
+  "webpack": "^5.65.0",
+  "webpack-cli": "^4.9.1"
+```
+
 ## 初始化 package.json
-```cmd
+新建文件夹在文件夹下 webpack-y
+```
+cd webpack-y
 npm init -y
 
 ``` 
@@ -98,14 +110,25 @@ module.exports = {
 
 ### 在命令行输入 **npm run build**
 
-![An image](./img/60022e3bb866feaa979b84b799cbade.png)
+![An image](./img/npm-run-build.png)
  
 ### webpack 已经把文件给打包完了 我们去dist 目录看下
 
- ![An image](./img/333b255acf644799e9bf1e055ee7f06.png)
+ ![An image](./img/7350a78bab3b48c3c6792feb2f1f126.png)
 
  这时候我们通过浏览器运行 index.html。在控制台就能看到index.js 中的输出
 
  ![An image](./img/98917588f0a4fa3e1e27621a0536ffa.png)
 
  最基本的js 打包已经实现了~
+
+ ### 注意的事项：
+ 1 mode 如果没有配置，打包的时候会出现警告
+ ![An image](./img/18943f83dbedfaa9a03c2b3f90c811f.png)
+
+ 2 HtmlWebpackPlugin 中 title 属性。配置的时候 需要在引用的模板中
+ 设置: <title> <%= htmlWebpackPlugin.options.title %> </title>
+
+ ![An image](./img/95992b75d58d53241b61125ec967bb0.png)
+
+ok~
