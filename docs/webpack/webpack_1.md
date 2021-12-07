@@ -1,12 +1,12 @@
 ---
-title: wepack
-date: 2021-8-02
+title: wepack搭建
+date: 2021-08-02
 categories: 
  - 前端
 tags:
  - webpack
 ---
-初始化 package.json
+## 初始化 package.json
 ```cmd
 npm init -y
 
@@ -14,7 +14,7 @@ npm init -y
 ![An image](./img/b9d7a8eb34e6267a2f0e1a09ff1699c.png)
 
 
-### 安装 webpack 依赖
+## 安装 webpack 依赖
 ```
 npm install  webpack webpack-cli --save-dev
 ```
@@ -22,20 +22,20 @@ npm install  webpack webpack-cli --save-dev
 ![An image](./img/c36f9b6116af2736cb16c2fb1e3fa29.png)
 
 
-### 这时候webpack-y 目录：
+### webpack-y 目录
 ![An image](./img/4977515e65bbc49406a4723ecac817e.png)
 
 
-### 打包js 文件
-#### 首先我们先修改了目录结构
+## 打包js文件
+### 修改了目录结构
 
 + 我们新建src目录,同时在src 目录下新建 index.html 文件
 + 然后在 src中新建 js目录同时新建 index.js 
 
-##### 目录结构
+#### 目录结构
 ![An image](./img/efdd0e5eaf74d1188cddbf2fe6c9a17.png)
 
-##### 修改index.js 内容
+#### 修改index.js内容
 
 ```javaScript
 const init  = ()=> {
@@ -46,7 +46,7 @@ init()
 ```
 
 
-### webpack 打包 肯定不能少了 webpack.config.js 配置
+## webpack.config.js 配置
 新建webpack.config.js 配置文件 配置一下内容 （稍后详细说明）
 
 ```javaScript
@@ -94,13 +94,13 @@ module.exports = {
     "build": "webpack"  // 新增 打包命令
   },
 ```
-#### 接下来让我们执行 打包命令 
+## 执行打包命令 
 
-##### 在命令行输入 **npm run build**
+### 在命令行输入 **npm run build**
 
 ![An image](./img/60022e3bb866feaa979b84b799cbade.png)
  
-##### webpack 已经把文件给打包完了 我们去dist 目录看下
+### webpack 已经把文件给打包完了 我们去dist 目录看下
 
  ![An image](./img/333b255acf644799e9bf1e055ee7f06.png)
 
