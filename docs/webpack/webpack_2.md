@@ -86,3 +86,31 @@ css 样成功显示！
 
 
 ## 图片资源打包
+
+安装图片相关loader 
+url-loader
+file-loader
+```
+npm install url-loader --save-dev
+```
+
+webpack.config.js 配置
+在 module rules 中新增以下配置信息：
+
+
+```
+     // 打包图片 用到 url-loader
+            {
+                test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+                use: {
+                    loader: "url-loader",
+                    options: {
+                        esModule: false,
+                        name: "images/[name].[hash:5].[ext]",
+                        limit: 1024,
+                        publicpath: "../img/"
+                    }
+                }
+            },
+
+```
