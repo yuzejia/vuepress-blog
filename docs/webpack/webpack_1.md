@@ -1,5 +1,5 @@
 ---
-title: wepack搭建
+title: webpack搭建
 date: 2021-08-02
 categories: 
  - 前端
