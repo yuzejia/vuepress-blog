@@ -201,12 +201,11 @@ npm install url-loader --save-dev
         ]
 
 ```
-好了就这么简单。我们接下来看下效果。
-文件输出中没有了图片文件。哪也页面能正常显示图片吗？
-<img src="img/ee9d67e00a5da0f2a01fac737f48595.png" alt="An image" style="zoom:50%">
+好了就这么简单。我们接下来看下效果。文件输出中没有了图片文件。页面能正常显示图片吗？
+<img src="./img/ee9d67e00a5da0f2a01fac737f48595.png" alt="An image" style="zoom:50%">
 
-运行index.html 
-<img src="img/ca9baf8cc61a504770a0a614a17385a.png" alt="An image" style="zoom:50%">
+**运行index.html** 
+<img src="./img/ca9baf8cc61a504770a0a614a17385a.png" alt="An image" style="zoom:50%">
 
 asset/inline 将图片资源转换成立 base64 并打包到了main.js 中。
 好了这个时候 css 背景图片可以正常打包了。
