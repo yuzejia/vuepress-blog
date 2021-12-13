@@ -6,7 +6,7 @@ categories:
 tags:
  - webpack
 ---
-## 接下来我们继续 打包 css 和 图片资源
+### 接下来我们继续 打包 css 和 图片资源
 
 我们先修改目录增加css 文件和 图片资源
 
@@ -16,13 +16,13 @@ src 新建img 目录
 
 我们本次修改了入口文件：
 src 下新建 main.js 我们接下来将main.js 作为我们的主入口文件
-修改 webpack.config.js entry参数：
+#### 修改 webpack.config.js entry参数：
 
 ```js
 entry: './src/main.js', // 入口文件 要打包的文件
 ```
 
-修改main.js 为：
+#### 修改main.js 为：
 
 ```js
 // 引入js 文件
@@ -33,8 +33,8 @@ require('./css/style.css')
 
 ```
 
-## css 文件打包
-接下来我们先安装 css 打包相关 loader 
+### css 文件打包
+#### 接下来我们先安装 css 打包相关 loader 
 
 **style-loader**
 **css-loader**
@@ -44,7 +44,7 @@ require('./css/style.css')
 npm install style-loader css-loader --save-dev
 ```
 
-安装完之后 在 webpack.config.js 中配置 loader
+#### 安装完之后 在 webpack.config.js 中配置 loader
 
 ```js
     module: {
@@ -57,14 +57,14 @@ npm install style-loader css-loader --save-dev
     },
 
 ```
-index.html 文件新增
+#### index.html 文件新增
 ```html
     <div>
         <h1>webpack</h1>
     </div>
 ```
 
-修改 style.css 内容
+#### 修改 style.css 内容
 
 ```css
     h1{
@@ -87,7 +87,7 @@ css 样成功显示！
 <img src="./img/6a2ea495ac14542b741c1eff1790108.png" alt="An image" style="zoom: 33%;" />
 
 
-## 图片资源打包
+### 图片资源打包
 
 #### 安装图片相关loader 
 url-loader
@@ -115,9 +115,7 @@ npm install url-loader --save-dev
             }
 
 ```
-**打包输出文件；**
-
-**dist/img/ 生成图片文件。**
+**打包输出文件。dist/img/ 生成图片文件。**
 ![An image](./img/d00906b4c01fd9cd33db44de01b0fef.png)
 
 **页面中正常引用并显示。**
@@ -125,7 +123,7 @@ npm install url-loader --save-dev
 
 **以上为webpack 5 正确的配置信息。**
 
-### **在此特意补充一下**
+#### **在此特意补充一下（注意！）**
 
 在webpack一开始配置的时候，并不知道webpack5丢弃了url-loader 。所以如果我们在webpack5 中使用url-loader 就要做以下配置
 配置的信息为：
@@ -165,7 +163,7 @@ npm install url-loader --save-dev
 
 到这里能够完全正常打包 css 图片了。但是对于webpack5来说，这种写法是webpack5 兼容 url-loader的处理方式。
 
-**对于webpack5 来说直接使用 asset module。接下来我用使用asset module 来修改配置。**
+#### 对于webpack5 来说直接使用 asset module。接下来我用使用asset module 来修改配置。
 资源模块类型(asset module type)，通过添加 4 种新的模块类型，来替换所有这些 loader：
 + asset/resource 发送一个单独的文件并导出 URL。之前通过使用 file-loader 实现。
 + asset/inline 导出一个资源的 data URI。之前通过使用 url-loader 实现。
