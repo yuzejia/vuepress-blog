@@ -206,7 +206,7 @@ npm install url-loader --save-dev
 
 asset/inline 将图片资源转换成立 base64 并打包到了main.js 中。
 好了这个时候 css 背景图片可以正常打包了。
-接下来如果现在我在index.html 直接引用图片来打包。
+接下来如果现在我在index.html 直接引用图片来打包。我们将使用html-loader进行打包。
 
 ### html-loader
 
@@ -225,12 +225,14 @@ asset/inline 将图片资源转换成立 base64 并打包到了main.js 中。
         }
 ```
 **编译打包**
+
 <img src="./img/e779af9c846ac7692e3acd6128569a2.png" src="An iamge" style="zoom:50%">
 
 **页面也正常显示**
+
 <img src="./img/b1146c615fd85d72b903412ad389709.png" src="An image" style="zoom:50%">
 
 ## 总结
 + webpack5 遗弃了url-loader 的支持。统一采用 asset module 代替。
-+ html 中的引入请使用html-loader。
++ html 中的图片引入请使用html-loader。
 + 最后发现一个问题html-loader 和 html-webpack-plugin 有冲突。导致title 失效。
