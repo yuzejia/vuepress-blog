@@ -6,7 +6,7 @@ categories:
 tags:
  - webpack
 ---
-### 接下来我们继续 打包 css 和 图片资源
+## 接下来我们继续 打包 css 和 图片资源
 
 我们先修改目录增加css 文件和 图片资源
 
@@ -16,13 +16,13 @@ src 新建img 目录
 
 我们本次修改了入口文件：
 src 下新建 main.js 我们接下来将main.js 作为我们的主入口文件
-#### 修改 webpack.config.js entry参数：
+### 修改 webpack.config.js entry参数：
 
 ```js
 entry: './src/main.js', // 入口文件 要打包的文件
 ```
 
-#### 修改main.js 为：
+### 修改main.js 为：
 
 ```js
 // 引入js 文件
@@ -33,8 +33,8 @@ require('./css/style.css')
 
 ```
 
-### css 文件打包
-#### 接下来我们先安装 css 打包相关 loader 
+## css 文件打包
+### 接下来我们先安装 css 打包相关 loader 
 
 **style-loader**
 **css-loader**
@@ -44,7 +44,7 @@ require('./css/style.css')
 npm install style-loader css-loader --save-dev
 ```
 
-#### 安装完之后 在 webpack.config.js 中配置 loader
+### 安装完之后 在 webpack.config.js 中配置 loader
 
 ```js
     module: {
@@ -57,14 +57,14 @@ npm install style-loader css-loader --save-dev
     },
 
 ```
-#### index.html 文件新增
+### index.html 文件新增
 ```html
     <div>
         <h1>webpack</h1>
     </div>
 ```
 
-#### 修改 style.css 内容
+### 修改 style.css 内容
 
 ```css
     h1{
@@ -87,16 +87,16 @@ css 样成功显示！
 <img src="./img/6a2ea495ac14542b741c1eff1790108.png" alt="An image" style="zoom: 33%;" />
 
 
-### 图片资源打包
+## 图片资源打包
 
-#### 安装图片相关loader 
+### 安装图片相关loader 
 url-loader
 file-loader
 ```
 npm install url-loader --save-dev
 ```
 
-#### webpack.config.js 配置。在 module rules 中新增以下配置信息：
+### webpack.config.js 配置。在 module rules 中新增以下配置信息：
 
 ```
      // 打包图片 用到 url-loader
@@ -123,7 +123,7 @@ npm install url-loader --save-dev
 
 **以上为webpack 5 正确的配置信息。**
 
-#### **在此特意补充一下（注意！）**
+### **在此特意补充一下（注意！）**
 
 在webpack一开始配置的时候，并不知道webpack5丢弃了url-loader 。所以如果我们在webpack5 中使用url-loader 就要做以下配置
 配置的信息为：
@@ -230,7 +230,7 @@ asset/inline 将图片资源转换成立 base64 并打包到了main.js 中。
 **页面也正常显示**
 <img src="./img/b1146c615fd85d72b903412ad389709.png" src="An image" style="zoom:50%">
 
-### 总结
+## 总结
 + webpack5 遗弃了url-loader 的支持。统一采用 asset module 代替。
 + html 中的引入请使用html-loader。
 + 最后发现一个问题html-loader 和 html-webpack-plugin 有冲突。导致title 失效。
