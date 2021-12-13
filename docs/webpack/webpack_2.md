@@ -1,5 +1,5 @@
 ---
-title: wepack 2 打包css和图片
+title: wepack打包css和图片
 date: 2021-08-02
 categories: 
  - 前端
