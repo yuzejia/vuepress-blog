@@ -162,7 +162,7 @@ npm install url-loader --save-dev
 <img src="./img/e257f88107c5d21c7107ffea91d4cf3.png" alt="An image" style="zoom:50%">
 
 到这里能够完全正常打包 css 图片了。但是对于webpack5来说，这种写法是webpack5 兼容 url-loader的处理方式。
-
+### asset module
 #### 对于webpack5 来说直接使用 asset module。接下来我用使用asset module 来修改配置。
 资源模块类型(asset module type)，通过添加 4 种新的模块类型，来替换所有这些 loader：
 + asset/resource 发送一个单独的文件并导出 URL。之前通过使用 file-loader 实现。
@@ -170,8 +170,7 @@ npm install url-loader --save-dev
 + asset/source 导出资源的源代码。之前通过使用 raw-loader 实现。
 + asset 在导出一个 data URI 和发送一个单独的文件之间自动选择。之前通过使用 url-loader，并且配置资源体积限制实现。
 
-代码实现：
-我用使用 **asset/inline** 来代替 url-loader。 rules 新增配置
+#### 使用 **asset/inline** 来代替 url-loader。 rules 新增配置
 ```json
       rules:[
             {
@@ -207,4 +206,9 @@ npm install url-loader --save-dev
 
 asset/inline 将图片资源转换成立 base64 并打包到了main.js 中。
 好了这个时候 css 背景图片可以正常打包了。
-如果现在我在index.html 直接引用图片来打包。
+接下来如果现在我在index.html 直接引用图片来打包。
+
+### html-loader
+```
+    npm install --save-dev html-loader
+```
