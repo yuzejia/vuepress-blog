@@ -1,10 +1,10 @@
 ---
 title: @types/chome api类型库
-date: 2020-4-7
+date: 2021-12-13
 categories: 
  - Google
 tags:
- - google-plugin
+ - Google-Plugin
 ---
 
 # Google 插件开发 chomeApi ts类型库
