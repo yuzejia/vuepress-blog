@@ -45,10 +45,10 @@ package.json 文件
 ```
 没配置之前：
 
-<img class="medium-zoom-image" src="./img/4d6733da125a655d334a689a694200e.png" alt="An image" style="zoom:50%">
+<img class="zoom-custom-imgs" src="./img/4d6733da125a655d334a689a694200e.png" alt="An image" >
 
 配置后：
 
-<img class="medium-zoom-image" src="./img/429777c006410de5b42bd6320e12bf4.png" alt="An iamge" style="zoom:50%">
+<img class="zoom-custom-imgs" src="./img/429777c006410de5b42bd6320e12bf4.png" alt="An iamge" >
 
 ts类型检测可以正常使用~

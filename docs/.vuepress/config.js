@@ -31,7 +31,12 @@ module.exports = {
       blogConfig: blogConfig
   },
   plugins:{
-    '@vuepress/medium-zoom':{},
+    '@vuepress/medium-zoom':{
+      selector: 'img.zoom-custom-imgs',
+      options: {
+        margin: 16
+      }
+    },
     "vuepress-plugin-comments": {},
     "@vuepress-reco/vuepress-plugin-kan-ban-niang": {
       options: {
