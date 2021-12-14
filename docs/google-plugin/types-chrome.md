@@ -1,5 +1,5 @@
 ---
-title: @types/chome api类型库
+title: types/chome api类型库
 date: 2021-12-13
 categories: 
  - Google
