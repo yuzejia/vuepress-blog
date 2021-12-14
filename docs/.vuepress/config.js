@@ -30,5 +30,13 @@ module.exports = {
       // 博客配置
       blogConfig: blogConfig
   },
-  plugins:["vuepress-plugin-comments"]
+  plugins:{
+    '@vuepress/medium-zoom':{},
+    "vuepress-plugin-comments": {},
+    "@vuepress-reco/vuepress-plugin-kan-ban-niang": {
+      options: {
+        theme: "wanko"
+      }
+    }
+  }
 }
