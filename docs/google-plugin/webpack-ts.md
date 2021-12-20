@@ -12,8 +12,9 @@ tags:
 [https://github.com/yuzejia/webpack-ts-google-plugin](https://github.com/yuzejia/webpack-ts-google-plugin)
 
 ## 设计思路
-1 Google-Plugin 开发规范
-2 webpack 编译ts 文件
-3 @types/chrome  chrome Api ts类型支持
++ Google-Plugin 开发规范
++ webpack 编译ts 文件
++ @types/chrome  chrome Api ts类型支持
 
 Google 插件开发中。manifest.json 是识别插件的唯一标识。
+通过
