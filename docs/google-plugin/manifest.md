@@ -38,7 +38,6 @@ manifest.json 文件是Google在识别插件时的唯一标识
 
         // 指定 可注入脚本的web网页
         "matches": [
-            "https://api.mabangerp.com/*",
             "https://www.baidu.com/*"
         ],
 

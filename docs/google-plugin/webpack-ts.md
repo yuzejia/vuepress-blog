@@ -17,4 +17,3 @@ tags:
 + @types/chrome  chrome Api ts类型支持
 
 Google 插件开发中。manifest.json 是识别插件的唯一标识。
-通过
