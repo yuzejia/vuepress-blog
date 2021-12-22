@@ -6,7 +6,6 @@ function start(route) {
     function onRequest(request, response) {
         const pathname = url.parse(request.url).pathname
         if(pathname != "/favicon.ico") {
-            response.writeHead(200, {'Content-Type': 'text/plain'});
             route(pathname, response);
 
         }
