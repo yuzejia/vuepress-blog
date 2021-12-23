@@ -4,7 +4,7 @@ date: 2018-04-01
 categories: 
  - 前端
 tags:
- - angular
+ - Angular
 ---
 
 angular 初探 ngrx 进行数据管理 
