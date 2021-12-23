@@ -4,7 +4,7 @@ date: 2020-04-01
 categories: 
  - 前端
 tags:
- - angular
+ - Angular
 ---
 
 ###angular 的模块组件关系搞不清的化，在实际开发中就会很使人头疼

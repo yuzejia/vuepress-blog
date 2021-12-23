@@ -1,11 +1,11 @@
----
+<!-- ---
 title: angular基础知识（二）
 date: 2018-04-01
 categories: 
  - 前端
 tags:
- - angular
----
+ - Angular
+--- -->
 # angular 基础入门篇
 
 angular 简述
