@@ -1,5 +1,5 @@
 ---
-title: rxjs学习笔记（一）安装
+title: rxjs 安装
 date: 2019-02-01
 categories: 
  - 前端

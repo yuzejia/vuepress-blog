@@ -40,7 +40,7 @@ module.exports = {
     "vuepress-plugin-comments": {},
     "@vuepress-reco/vuepress-plugin-kan-ban-niang": {
       options: {
-        theme: "wanko"
+        theme:  ['shizuku', 'whiteCat', 'blackCat', 'haru1', 'haru2', 'haruto', 'koharu', 'izumi', 'wanko', 'miku', 'z16']
       }
     }
   }

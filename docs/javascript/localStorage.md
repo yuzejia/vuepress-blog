@@ -7,7 +7,7 @@ tags:
  - javaScript
 ---
  
- ```
+ ```javaScript
  var orignalSetItem = localStorage.setItem;
 
     localStorage.setItem = function(key,newValue){
