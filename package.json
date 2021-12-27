@@ -22,6 +22,9 @@
     "vuepress-theme-reco": "^1.2.2"
   },
   "dependencies": {
+    "koa": "^2.13.4",
+    "koa-router": "^7.4.0",
+    "mddir": "^1.1.1",
     "node-uuid": "^1.4.8",
     "ws": "^7.5.1"
   },
