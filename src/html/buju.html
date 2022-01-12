@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 布局 </title>
+
+    <style>
+        .outer {
+            display: flex;
+            height: 100px;
+        }
+
+        .left {
+            width: 100px;
+            background: tomato;
+        }
+
+        .right {
+            width: 100px;
+            background: gold;
+        }
+
+        .center {
+            flex: 1;
+            background: lightgreen;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+
+        <div class="outer">
+            <div class="left"></div>
+            <div class="center"></div>
+ 
+            <div class="right"></div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

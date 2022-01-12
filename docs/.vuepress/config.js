@@ -3,7 +3,7 @@ const blogConfig = require('./configs/blog-config');
 
 module.exports = {
   title: "YUZEJIA",
-  description: "It turns out that each of us is a clown. In order to live, we have to shape ourselves in a way that others like",
+  // description: "It turns out that each of us is a clown. In order to live, we have to shape ourselves in a way that others like",
   base: '/vuepress-blog/', // 项目根路径
   dest: './docs/.vuepress/dist/', // 打包后的文件夹路径，为了方便，我把 dist 文件夹放到了根目录上
   // head 标签中的额外内容
@@ -38,10 +38,5 @@ module.exports = {
       }
     },
     "vuepress-plugin-comments": {},
-    "@vuepress-reco/vuepress-plugin-kan-ban-niang": {
-      options: {
-        theme:  ['shizuku', 'whiteCat', 'blackCat', 'haru1', 'haru2', 'haruto', 'koharu', 'izumi', 'wanko', 'miku', 'z16']
-      }
-    }
   }
 }
