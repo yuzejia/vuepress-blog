@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>defineProperty双向绑定</title>
 </head>
 
 <body>
@@ -15,25 +15,47 @@
     </div>
 
     <script>
-        let obj = {
-            value: ""
+        // let obj = {
+        //     value: ""
+        // }
+        // const box = document.getElementById("box")
+        // const inputDom = document.getElementById("in")
+
+        // inputDom.addEventListener("keyup", (e) => {
+        //     obj.value = e.target.value
+        // })
+
+        // Object.defineProperty(obj, "value", {
+        //     set: function (nV) {
+        //         box.innerText = nV
+        //     },
+
+        //     get: function (eV) {
+        //         console.log('get', ev);
+        //     }
+        // })
+
+
+        let objItem = {
+            name: 'yu'
         }
-        const box = document.getElementById("box")
-        const inputDom = document.getElementById("in")
 
-        inputDom.addEventListener("keyup", (e) => {
-            obj.value = e.target.value
-        })
-
-        Object.defineProperty(obj, "value", {
-            set: function (nV) {
-                box.innerText = nV
+       var targetWithLog = new Proxy(objItem, {
+            get: function(target,v) {
+                console.log("proxy--get", v);
+                return target[v]
             },
 
-            get: function (eV) {
-                console.log('get', ev);
+            set: function(target, n) {
+                console.log(target[n], "被设置");
+                console.log(target);
             }
         })
+
+        console.log(targetWithLog.name);
+        targetWithLog.name = '11222'
+
+
 
     </script>
 </body>

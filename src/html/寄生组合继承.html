@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        // 原型链继承  
+        // 将父类的实例作为子类的原型
+        function SuperType() {
+            this.superValue = "我是父类"
+        }
+
+        SuperType.prototype.getName = function () {
+            console.log(this.superValue);
+        }
+
+        function subType() {
+            this.subValue = "我是子类"
+        }
+
+        //继承父类--父类的实例赋值给子类的的原型对象prototype
+        //new关键字将父类的构造函数，属性和方法复制给了实例化对象，并且将实例化对象的__proto__指向了父类的原型对象
+        subType.prototype = new SuperType();
+
+        // 给字类添加方法
+        subType.prototype.getSubName = function () {
+            console.log(this.subValue);
+        }
+
+        // 实例化字类
+        const instance = new subType()
+        console.log(instance);
+        instance.getName()
+        instance.getSubName()
+
+        // 确定原型与实例的关系：使用instanceof操作符。instanceof运算符用于测试构造函数的prototype属性是否出现在对象的原型链中的任何位置。
+        console.log( instance instanceof  SuperType);
+        console.log(instance instanceof subType)
+
+
+    </script>
+</body>
+
+</html>
