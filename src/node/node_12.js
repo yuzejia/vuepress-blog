@@ -18,12 +18,17 @@ connection.connect((err) => {
   console.log('connect success!')
 });
 
-// 查询数据
-var  sql = 'SELECT * FROM admin';
-connection.query(sql, function (error, results, fields) {
-  if (error) throw error;
-  console.log('The solution is: ', results);
-});
+
+
+
+function getAdmin() {
+  // 查询数据
+  var sql = 'SELECT * FROM admin';
+  connection.query(sql, function (error, results, fields) {
+    if (error) throw error;
+    console.log('The solution is: ', results);
+  });
+}
 
 // 增加数据
 // var  addSql = 'INSERT INTO admin(time,name,id) VALUES(?,?,?)';
@@ -42,11 +47,12 @@ connection.query(sql, function (error, results, fields) {
 
 // connection.end();
 
-// app.listen(8000, () => {
-//         console.log("服务启动");
-// })
+app.listen(8000, () => {
+  console.log("服务启动");
+})
 
-// app.get("/index", function(res, rep) {
-//     console.log("./ ---");
-//     rep.end('11')
-// })
+app.get("/index", function (res, rep) {
+  console.log("./ ---");
+  getAdmin()
+  rep.end('11')
+})

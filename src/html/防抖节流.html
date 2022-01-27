@@ -1,28 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        #box {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            border: 1px solid #c3c3c3;
+        }
+    </style>
 </head>
+
 <body>
     <div>
         <div id="box">div</div>
+        <button onclick="btnClick()">点击我</button>
     </div>
 
     <script>
+
+        //   ----  防抖 时间触发后指定时间来执行该事件，如果该指定时间内 继续触发了该事件 则该事件 不执行
         const box = document.getElementById("box")
-        box.onmousemove = debounce(mou, 1000)
-       
-       function mou(e) {
+        box.onmousemove = throttle(mou, 1000)
+
+        function mou(e) {
             console.log(e);
         }
 
 
         function debounce(fn, t) {
             let timeout
-            return function() {
+            return function () {
                 clearInterval(timeout)
                 timeout = setTimeout(() => {
                     fn.apply(this, arguments)
@@ -30,7 +46,42 @@
 
             }
         }
+        function bFn() {
+            console.log("我触发了");
+        }
+        btnClick = throttle(bFn, 2000)
+
+        // 节流 -----  时间触发后。在指定时间内再次触发了该事件。则事件不执行。并且重新开始计算该事件。并执行
+        // function throttle(fn, delay) {
+        //     var preTime = Date.now();
+        //     console.log("----------", preTime);
+        //     return function () {
+        //         let nowTime = Date.now();
+
+        //         console.log(nowTime - preTime);
+        //         if (nowTime - preTime > delay) {
+        //             preTime = Date.now()
+        //             return fn.apply(this, arguments)
+        //         }
+        //     }
+        // }
+
+        function throttle(fn, wait) {
+            var pre = Date.now();
+            return function () {
+                var context = this;
+                var args = arguments;
+                var now = Date.now();
+                if (now - pre >= wait) {
+                    fn.apply(context, args);
+                    pre = Date.now();
+                }
+            }
+        }
+
+        window.addEventListener("mousemove",throttle(bFn,1000));
 
     </script>
 </body>
+
 </html>
