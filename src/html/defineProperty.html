@@ -15,25 +15,25 @@
     </div>
 
     <script>
-        // let obj = {
-        //     value: ""
-        // }
-        // const box = document.getElementById("box")
-        // const inputDom = document.getElementById("in")
+        let obj = {
+            value: ""
+        }
+        const box = document.getElementById("box")
+        const inputDom = document.getElementById("in")
 
-        // inputDom.addEventListener("keyup", (e) => {
-        //     obj.value = e.target.value
-        // })
+        inputDom.addEventListener("keyup", (e) => {
+            obj.value = e.target.value
+        })
 
-        // Object.defineProperty(obj, "value", {
-        //     set: function (nV) {
-        //         box.innerText = nV
-        //     },
+        Object.defineProperty(obj, "value", {
+            set: function (nV) {
+                box.innerText = nV
+            },
 
-        //     get: function (eV) {
-        //         console.log('get', ev);
-        //     }
-        // })
+            get: function (eV) {
+                console.log('get', ev);
+            }
+        })
 
 
         let objItem = {
