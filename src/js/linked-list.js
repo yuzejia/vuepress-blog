@@ -144,8 +144,8 @@ linked.append("3")
 linked.append("4")
 linked.append("5")
 // linked.appHead("6")
-linked.insert(3, "6")
-linked.delete(4)
+// linked.insert(3, "6")
+// linked.delete(4)
 const c = linked.find("9")
 console.log('position', c);
 console.log(linked);
