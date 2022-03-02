@@ -62,7 +62,7 @@ const o3: Readonly<obj> = {
 }
 
 // 修改 报错
-o3.age = 27
+// o3.age = 27
 
 /**
  * From T, pick a set of properties whose keys are in the union K
