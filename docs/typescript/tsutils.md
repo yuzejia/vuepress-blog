@@ -1,6 +1,6 @@
 ---
 title: ts-utils
-date: 20201-11-02
+date: 2021-11-02
 categories:
   - 前端
 tags:
