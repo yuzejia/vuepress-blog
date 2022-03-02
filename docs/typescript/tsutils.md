@@ -1,3 +1,12 @@
+---
+title: ts-utils
+date: 20201-11-02
+categories:
+  - 前端
+tags:
+  - typeScript
+---
+
 ```typescript
 interface ArrayLike<T> {
   readonly length: number;
