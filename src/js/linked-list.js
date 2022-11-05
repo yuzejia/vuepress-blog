@@ -2,6 +2,7 @@ class Node {
     constructor(el) {
         this.el = el
         this.next = null
+        this.prev = null
     }
 }
 
@@ -14,26 +15,45 @@ class linkedList {
     // 追加元素
     append(el) {
         let node = new Node(el);
-        let current = null // 指针
-
 
         if (this.head === null) {
             this.head = node
-
         } else {
-            current = this.head;
-
+            let previous = null;
+            let current = this.head;
             while (current.next) {
-                current = current.next
+                current = current.next;
             }
-
-            current.next = node
-
+            current.next = node;
+            node.prev = current;
         }
-        this.length++
 
 
+
+        this.length++;
     }
+    // append(el) {
+    //     let node = new Node(el);
+    //     let current = null // 指针
+
+
+    //     if (this.head === null) {
+    //         this.head = node
+
+    //     } else {
+    //         current = this.head;
+
+    //         while (current.next) {
+    //             current = current.next
+    //         }
+
+    //         current.next = node
+
+    //     }
+    //     this.length++
+
+
+    // }
 
     // 头部添加元素
     appHead(el) {
@@ -132,6 +152,17 @@ class linkedList {
 
     }
 
+    // 获取最后一个节点
+    findLast() {
+        let currNode = this.head;
+
+        while (currNode.next) {
+            currNode = currNode.next;
+        }
+
+        return currNode;
+    }
+
 
 
 }
@@ -143,9 +174,5 @@ linked.append("2")
 linked.append("3")
 linked.append("4")
 linked.append("5")
-// linked.appHead("6")
-// linked.insert(3, "6")
-// linked.delete(4)
-const c = linked.find("9")
-console.log('position', c);
+
 console.log(linked);

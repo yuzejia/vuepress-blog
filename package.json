@@ -17,6 +17,8 @@
     "@vuepress-reco/vuepress-plugin-comments": "^1.0.13",
     "@vuepress-reco/vuepress-plugin-kan-ban-niang": "^1.0.5",
     "@vuepress/plugin-medium-zoom": "^1.8.2",
+    "archive": "0.0.2",
+    "archiver": "^5.3.0",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0",
     "ts-node": "^10.6.0",
